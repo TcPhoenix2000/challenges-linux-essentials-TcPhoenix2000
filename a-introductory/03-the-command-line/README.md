@@ -4,39 +4,97 @@ Find all the info you need in the man-pages. Make sure to comment the commands y
 
 Mark challenges using a ✅ once they are finished.
 
-## ❌ The man command
+## ✅ The man command
+//*Describe in your own words what the `man` command does.*
 
-*Describe in your own words what the `man` command does.*
+the `man` command stands for the **"user manual"** and gives you general information about any command that is passed with the command.
+the `man` command is to be used in combination with any another command.
+to help you understand what the command does and what options are available for the command you are trying to understand.
 
-## ❌ The whoami command
+### for example: *ask the user manual for the ls command*
+```sh
+[user@linux][~]$ man ls
+```
+### output
+![man ls terminal output](../images-a/man-ls.jpg)
 
-*Describe in your own words what the `whoami` command does.*
+## ✅ The whoami command
+//*Describe in your own words what the `whoami` command does.*
 
-## ❌ The uptime command
+the `whoami` command show's the user the linux user that is currently logged in at that time.
+### for example: 
+```sh
+[user@linux][~]$ whoami
+```
+### output
+```
+user
+```
 
-*Describe in your own words what the `uptime` command does.*
+## ✅ The uptime command
+//*Describe in your own words what the `uptime` command does.*
 
-## ❌ Help on ls
+the `uptime` command show's what time it is and how much time has passed from when the system was booted.
+### for example: 
+```sh
+[user@linux][~]$ uptime
+```
+### output
+```
+16:52:37 up 28 min,  0 users,  load average: 0.00, 0.00, 0.00
+```
 
-*`ls` can be used to list the files and directories in Linux. If you execute the command `ls -h` you do not get any help about the command. How come? What does `ls -h` actually do?*
+## ✅ Help on ls
+//*`ls` can be used to list the files and directories in Linux. If you execute the command `ls -h` you do not get any help about the command. How come? What does `ls -h` actually do?*
 
-## ❌ Hidden files
+the `ls -h` command shows all the not hidden files of the root folder of the system.
+>to get the actual help for the `ls` command you should use `ls --help`.
 
-*Linux harbors some hidden files which are not automatically listed when executing `ls`. Find out how to list hidden files. How can we recognize hidden files?*
+## ✅ Hidden files
+//*Linux harbors some hidden files which are not automatically listed when executing `ls`. Find out how to list hidden files. How can we recognize hidden files?*
 
-## ❌ Special Directories
+to list all hidden files you can use `ls -a` or `ls --all`.
+>we can recognize hidden files on the fact that they have a `.` in front of there name.
 
-*What do the following symbols refer to when used for example with `ls`?*
+## ✅ Special Directories
+//*What do the following symbols refer to when used for example with `ls`?*
 
-* **`~`**:
-* **`.`**:
-* **`..`**:
-* **`/`**:
+* **`~`**: refers to the home directory
+* **`.`**: refers to the current directory
+* **`..`**: refers to the parent directory
+* **`/`**: refers to the root directory
 
-## ❌ What shells are available
+## ✅ What shells are available
+//*Check the Internet on how you can get a list of all available shells on your system.*
 
-*Check the Internet on how you can get a list of all available shells on your system.*
+to list all available shells on your system you can use the `cat` command that will show the shells file in the terminal window.
+### code example use `cat` /etc/shells: 
+```sh
+[user@linux][~]$ cat /etc/shells
+```
+### output
+```
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/bin/dash
+/usr/bin/dash
+/usr/bin/tmux
+/usr/bin/screen
+```
 
-## ❌ What date is it
+## ✅ What date is it
+//*How would you request the current date and time via the terminal?*
 
-*How would you request the current date and time via the terminal?*
+too request the current date and time you can use the `date` command.
+### code example `date` : 
+```sh
+[user@linux][~]$ date
+```
+### output
+```
+Sun Oct  2 17:25:12 CEST 2022
+```
