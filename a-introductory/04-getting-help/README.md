@@ -128,26 +128,58 @@ the `dmesg` command shows you the info stored in the kernel ring buffer. It is m
 ### output:
 ![dmesg output image](../images-a/dmesg.jpg)
 
-## ❌ Checksums
+## ✅ Checksums
+//*Go to the website of Raspberry Pi - [https://www.raspberrypi.org/software/operating-systems](https://www.raspberrypi.org/software/operating-systems) and download the Raspberry Pi OS image using the `wget` command line tool. Now check if the SHA-256 checksum complies with the one being advertised on the website.*
 
-*Go to the website of Raspberry Pi - [https://www.raspberrypi.org/software/operating-systems](https://www.raspberrypi.org/software/operating-systems) and download the Raspberry Pi OS image using the `wget` command line tool. Now check if the SHA-256 checksum complies with the one being advertised on the website.*
+```sh
+[user@linux][~]$ wget https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2022-09-26/2022-09-22-raspios-bullseye-arm64.img.xz
+```
+### output:
+```
+--2022-10-07 15:58:07--  https://downloads.raspberrypi.org/raspios_arm64/images/raspios_arm64-2022-09-26/2022-09-22-raspios-bullseye-arm64.img.xz
+Resolving downloads.raspberrypi.org (downloads.raspberrypi.org)... 176.126.240.167, 93.93.130.212, 46.235.227.39, ...
+Connecting to downloads.raspberrypi.org (downloads.raspberrypi.org)|176.126.240.167|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 821326852 (783M) [application/x-xz]
+Saving to: ‘2022-09-22-raspios-bullseye-arm64.img.xz’
 
-*What tool did you use to calculate the checksum? Demonstrate its usage.*
+2022-09-22-raspios-bullseye-arm64.img.xz           100%[===========================================>] 783.28M  18.7MB/s    in 39s     
 
-*What is the use of this hash?*
+2022-10-07 15:58:46 (20.2 MB/s) - ‘2022-09-22-raspios-bullseye-arm64.img.xz’ saved [821326852/821326852]
+```
 
-## ❌ The printenv command
+//*What tool did you use to calculate the checksum? Demonstrate its usage.*
 
-*Describe in your own words what the `printenv` command does.*
+To check the checksum i used the following command: `sha256sum` this will calculate the checksum with the SHA-256 algorithm.
 
-## ❌ IP Address
+//*What is the use of this hash?*
 
-*Find the IP address of your WiFi interface. What command did you use?*
+The use for the hash is to determine is the download of the files was successfully completed without errors. 
 
-## ❌ IP of Redmine Server
+## ✅ The printenv command
+//*Describe in your own words what the `printenv` command does.*
 
-*What is the IP address of the server `project.devbit.be`?*
+it lists all the available environment variables for the current system.
 
-## ❌ The nslookup command
+## ✅ IP Address
+//*Find the IP address of your WiFi interface. What command did you use?*
 
-*Describe in your own words what the `nslookup` command does.*
+I used the `ip a` command to get the IP address of all the network interfaces.
+
+## ✅ IP of Redmine Server
+//*What is the IP address of the server `project.devbit.be`?*
+
+To get the IP address of `project.devbit.be` i used the `host` command.
+
+```sh
+[user@linux][~]$ host project.devbit.be
+```
+### output
+```
+project.devbit.be has address 141.105.126.63
+```
+
+## ✅ The nslookup command
+//*Describe in your own words what the `nslookup` command does.*
+
+the `nslookup` command is a command that will look up a url and return the corresponding ip address from the dns server database. 
