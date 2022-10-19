@@ -89,14 +89,44 @@ Hello World from JavaScript
 undefined
 ```
 
-## ❌ Dhcpdump
+## ✅ Dhcpdump
 
 //*Install the `dhcpdump` and try to capture some DHCP traffic in the network. Work together with another student and try to capture the DHCP request of his/her laptop. Find out what the MAC Address is and check it using the `ip` tool.*
 
-## ❌ MQTT
+this does **not** work on Windows subsystem for linux because it doesn't have the access to the raw network data.
+
+## ✅ MQTT
 
 //*Find a command line tool that allows you to publish messages to an MQTT broker. Use it to send your name to the topic `linux/students`. Use the broker `mqtt.devbit.be`.*
 
-## ❌ tree command
+### using mosquito-clients package
+```bash
+[user@linux][~]$ mosquitto_sub -h mqtt.devbit.be -t linux/students
+```
+### using secondary terminal
+```bash
+[user@linux][~]$ mosquitto_pub -h mqtt.devbit.be -t linux/students -m "testing this mqtt channel"
+```
+### Output
+```
+testing this mqtt channel
+```
+
+## ✅ tree command
 
 //*What does the `tree` command do? How do you list all subdirs too? How can you only include directories?*
+
+it creates a visual tree structure of all subdirectories and filles in current directory.
+
+to see only directory's when using the `tree` command you must add the `-d` flag. 
+
+```bash
+[user@linux][~]$ tree -d
+```
+### Output
+```
+.
+└── b-managing-linux-systems
+    ├── 01-package-managers
+    └── 02-users-and-groups
+```
