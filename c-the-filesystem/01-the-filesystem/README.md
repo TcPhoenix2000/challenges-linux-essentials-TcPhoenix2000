@@ -5,21 +5,31 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-## ❌ touch
+## ✅ touch
+//*What does `touch` actually do? Demonstrate using an example.*
 
-*What does `touch` actually do? Demonstrate using an example.*
+touch is used to create a new file in the filesystem.
 
-## ❌ Authentication Log
+### the touch command
+```sh
+[user@linux][~]$ touch {filename}
+```
 
-*There is a file on the system that logs authentication changes and failures. Can you guess where it can be found? Provide the path to the file.*
+## ✅ Authentication Log
+//*There is a file on the system that logs authentication changes and failures. Can you guess where it can be found? Provide the path to the file.*
 
-## ❌ Apt Source List
+this does **not** work on Windows subsystem for linux because WSL doesn't run any services by default, including `rsyslog` witch would have created the `/log/var/auth.log`.
 
-*The apt tool uses a configuration file which specifies in which repositories it should look for packages. Its called the apt `sources.list` file. Can you guess where it can be found? Provide the path to the file.*
+## ✅ Apt Source List
+//*The apt tool uses a configuration file which specifies in which repositories it should look for packages. Its called the apt `sources.list` file. Can you guess where it can be found? Provide the path to the file.*
 
-## ❌ Tmp Filesystem
+this file can be found at this path `/etc/apt/sources.list`
 
-*Create a file called `hello` in `/tmp`. Restart your linux distro using `reboot`. Where is the file? What happened?*
+## ✅ Tmp Filesystem
+//*Create a file called `hello` in `/tmp`. Restart your linux distro using `reboot`. Where is the file? What happened?*
+
+the `hello` file was created but when you restart your linux distro the `tmp`
+directory gets cleared.
 
 ## ❌ Timestamps
 
