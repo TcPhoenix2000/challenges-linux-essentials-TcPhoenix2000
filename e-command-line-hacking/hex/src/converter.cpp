@@ -1,13 +1,21 @@
 #include "converter.h"
 
+using namespace std;
 using namespace hex;
 
-Converter::Converter(char32_t flag){
+Converter::Converter(){
 
 };
-void Converter::hexConverter(){
+std::string Converter::ConvertStr(string string){
 
 };
-void Converter::decConverter(){
 
-};
+// std::string Converter::DexToHecConverter(string string){
+
+// };
+// std::string Converter::HexToDecConverter(string string){
+
+// };
+// std::string Converter::stringParser(std::string string){
+
+// };
