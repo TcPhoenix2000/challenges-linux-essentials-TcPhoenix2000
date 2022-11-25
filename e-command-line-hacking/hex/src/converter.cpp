@@ -2,6 +2,7 @@
 #include <string>
 // #include <iostream>
 
+using namespace std;
 using namespace hex;
 using namespace std;
 
@@ -26,8 +27,18 @@ string Converter::hexConverter(int num){
     for(i=i-1; i>=0; i--){
         str = str+hex[i];
     }
-        return str;
-};
+    return str;
+}
 void Converter::decConverter(int value){
 
-};
+}
+
+// std::string Converter::DexToHecConverter(string string){
+
+// };
+// std::string Converter::HexToDecConverter(string string){
+
+// };
+// std::string Converter::stringParser(std::string string){
+
+// };

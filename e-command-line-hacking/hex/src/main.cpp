@@ -49,6 +49,9 @@ int main(int argc, const char* argv[]){
 
     ////test string
     //this is a this is a2 t2st to see if this 16 sure would work
+    string result;
+    Converter Convert;
+    cout << "welcome to Hex to convert all you decimal numbers to there hex value :" << endl;
     while(true){
         str="";
         getline (cin,str);
