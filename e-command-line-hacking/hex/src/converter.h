@@ -1,9 +1,10 @@
 #pragma once
+#include <string>
 namespace hex{
     class Converter{
         public:
-            Converter(char32_t flag);
-            void hexConverter();
-            void decConverter();
+            Converter();
+            std::string hexConverter(int value);
+            void decConverter(int value);
     };
 }
