@@ -26,18 +26,18 @@ int main(int argc, const char* argv[]){
     //("f,file", "File name", cxxopts::value<std::string>())
     //("v,verbose", "Verbose output", cxxopts::value<bool>()->default_value("false"))
 
-    auto result = options.parse(argc, argv);
+    auto res = options.parse(argc, argv);
 
-    if (result.count("help")){
+    if (res.count("help")){
         cout << options.help()<< endl;
         exit(0); 
     }
-    if (result.count("version")){
+    if (res.count("version")){
         cout << "hex version: "<< VERSION << endl;
         exit(0);
     }
-    bool prefix = result["prefix"].as<bool>();
-    bool decimal = result["decimal"].as<bool>();
+    bool prefix = res["prefix"].as<bool>();
+    bool decimal = res["decimal"].as<bool>();
 
     string str;
     string delim = " ";
