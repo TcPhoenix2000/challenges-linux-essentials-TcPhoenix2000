@@ -8,15 +8,13 @@ Mark challenges using a ✅ once they are finished.
 //*Create a script that output the date every 10 seconds. Use the `sleep` command to wait between calls to the `date` command.*
 use ./scripts/date-logger to run the script.
 
-## ❌ Available Memory
-
-*Output the available system memory together with the current date in the following format:*
-
+## ✅ Available Memory
+//*Output the available system memory together with the current date in the following format:*
 ```
 [Thu 14 May 2020 11:12:55 AM CEST] MemAvailable:   28439572 kB
 ```
-
-*The available memory can be found in the file `/proc/meminfo`. Use the `grep` tool to filter out the line with MemAvailable.*
+//*The available memory can be found in the file `/proc/meminfo`. Use the `grep` tool to filter out the line with MemAvailable.*
+use ./scripts/mem-check to run the script.
 
 ## ❌ Fetching Github Keys
 
