@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+USER=${1}
+
+if ["${USER}" = ""];then
+    echo Please enter GitHub username:
+    read USER
+    echo Fetching Keys from ${USER}
+    curl "https://github.com/${USER}.keys"
+else
+    echo Fetching Keys from ${USER}
+    curl "https://github.com/${USER}.keys"
+fi
