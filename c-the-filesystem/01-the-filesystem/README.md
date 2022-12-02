@@ -84,35 +84,85 @@ ln: failed to create hard link '/etc/passwd': File exists
 The `ln` command will try to create a symbolic link between two files.
 If you don't have permissions to read one of the files the the `ln` command will return an `failed to create`.
 
-## ❌ SD Card
+## ✅ SD Card
 //*Plugin an SD Card or a USB stick into you computer. Where can we find the actual block device? Where is the filesystem mounted? What is the difference between these two?*
 
-## ❌ My Own Local Domain Name
+you will find the SD card under `/mnt/sd-card` and the usb stick under `/media/usb-drive`.
+
+## ✅ My Own Local Domain Name
 1. //*Make a backup of the file `/etc/hosts` to the directory `~/backups` directory. Create the directory as needed.*
+```sh
+[user@linux][~]$ mkdir -p backups && cp /etc/hosts backups
+```
 
 2. //*Search the man pages for the use of `/etc/hosts`. Explain in your own words.*
+I would discribe the `/etc/hosts` file as the file that associates ip addresses with a hostname. 
+In other words your device's local dns.
 
 3. //*Edit the file `/etc/hosts` so we can ping the hostname `hellokitty.dev`. Test it by using the `ping` command. Output the result here and the content of `/etc/hosts`. Make sure to leave the `localhost` entry as is!*
+I added this line in the `/etc/hosts` file after the localhost line:
+```sh
+127.0.1.2   hellokitty.dev 
+```
+### ping 
+```sh 
+[user@linux][~]$ ping hellokitty.dev
+```
+### output
+```sh
+64 bytes from hellokitty.dev (127.0.1.2): icmp_seq=1 ttl=64 time=0.916 ms
+64 bytes from hellokitty.dev (127.0.1.2): icmp_seq=2 ttl=64 time=0.025 ms
+64 bytes from hellokitty.dev (127.0.1.2): icmp_seq=3 ttl=64 time=0.050 ms
+64 bytes from hellokitty.dev (127.0.1.2): icmp_seq=4 ttl=64 time=0.019 ms
+^C
+--- hellokitty.dev ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3071ms
+rtt min/avg/max/mdev = 0.019/0.252/0.916/0.383 ms
+```
 
-## ❌ Chuck
+## ✅ Chuck
 1. //*Make a git clone of `https://github.com/BioBoost/chuck_norris_facts.git` inside of the directory `~/projects`.*
+```sh
+[user@linux][~]$ mkdir -p ./projects && cd ./projects
+[user@linux][~/projects]$ git clone https://github.com/BioBoost/chuck_norris_facts.git 
+```
 
 2. //*Rename the directory to `facts_about_chuck_norris`.*
+By using the mv command the directory will be effectively renamed.
+```sh
+[user@linux][~]$ mv ./chuck_norris_facts ./facts_about_chuck_norris
+```
 
 3. //*All we need from this repo is the actual facts from the file `README.md`. Delete all other files and directories. Don't forget to remove the hidden `.git` directory.*
+```sh
+[user@linux][~]$ rm -rf ^*.md
+[user@linux][~]$ rm -rf .gitignore && rm -rf .git
+```
+first command is to delete all files and directories that are not hidden and are not a .md file.
+second command is to delete the hidden git files
 
-
-## ❌ Oh My API
+## ✅ Oh My API
 1. //*Go back to your `projects` directory and create a directory `oh_my_api`.*
+```sh
+[user@linux][~/projects]$ mkdir -p ./oh_my_api && cd ./oh_my_api 
+```
 
 2. //*Create a file called `index.js` inside of the directory `oh_my_api/src`.*
+```sh
+[user@linux][~/projects/oh_my_api]$ touch ./index.js
+```
 
 3. //*Execute the command `npm init` inside the `oh_my_api` directory and follow its instructions.*
+```sh
+[user@linux][~/projects/oh_my_api]$ npm init
+```
 
 4. //*Next install the `express` module by executing the command `npm install express` inside of the directory `oh_my_api`.*
+```sh
+[user@linux][~/projects/oh_my_api]$ npm install express
+```
 
 5. //*Now edit the file `index.js` using nano and place the following content in it:*
-
 ```js
 const express = require('express')
 const app = express()
@@ -123,3 +173,4 @@ app.listen(port, () => console.log(`App is listening on port ${port}!`))
 ```
 
 6. //*Test your API using a browser or a tool such as insomnia from Windows or another machine. If you are using WSL you will need to do some research on how to connect to your Ubuntu from Windows.*
+![image of windows browser](../images-c/browser.png)
