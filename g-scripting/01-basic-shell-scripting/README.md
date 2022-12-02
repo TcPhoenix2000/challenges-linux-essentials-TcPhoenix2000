@@ -16,7 +16,7 @@ use ./scripts/date-logger to run the script.
 //*The available memory can be found in the file `/proc/meminfo`. Use the `grep` tool to filter out the line with MemAvailable.*
 use ./scripts/mem-check to run the script.
 
-## ❌ Fetching Github Keys
+## ✅ Fetching Github Keys
 //*Create a script that fetches the public SSH keys of a user on GitHub and displays them in the terminal. This can be accomplished by using the curl tool to access the endpoint `https://github.com/<username>.keys`, where `<username>` is an existing github username.*
 
 //*Take in the username via the command line arguments. If none is provided request it from the user using the read command.*
