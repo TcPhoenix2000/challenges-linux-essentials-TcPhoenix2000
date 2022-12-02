@@ -4,9 +4,9 @@ Solve the challenges by creating small bash scripts. Place the bash scripts here
 
 Mark challenges using a ✅ once they are finished.
 
-## ❌ Log the Date
-
-*Create a script that output the date every 10 seconds. Use the `sleep` command to wait between calls to the `date` command.*
+## ✅ Log the Date
+//*Create a script that output the date every 10 seconds. Use the `sleep` command to wait between calls to the `date` command.*
+use ./scripts/date-logger to run the script.
 
 ## ❌ Available Memory
 

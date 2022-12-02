@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# tried somthing
+while :
+do
+    date +"%m-%d-%y %H:%M:%S"
+    sleep 10
+done
