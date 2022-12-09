@@ -20,10 +20,10 @@ int main(int argc, const char* argv[]){
     ("h,help","print usage")
     ("p,prefix","TODO", cxxopts::value<bool>()->default_value("false"))
     ("d,decimal","TODO", cxxopts::value<bool>()->default_value("false"))
+    ("f,file", "File name", cxxopts::value<std::string>())
     ;
     //("d,debug", "Enable debugging") // a bool parameter
     //("i,integer", "Int param", cxxopts::value<int>())
-    //("f,file", "File name", cxxopts::value<std::string>())
     //("v,verbose", "Verbose output", cxxopts::value<bool>()->default_value("false"))
 
     auto res = options.parse(argc, argv);
@@ -45,8 +45,6 @@ int main(int argc, const char* argv[]){
     size_t pos = 0;
     int num;
     
-    //cout << "welcome to Hex to convert all you decimal numbers to there hex value :" << endl;
-
     ////test string
     //this is a this is a2 t2st to see if this 16 sure would work
     string result;
