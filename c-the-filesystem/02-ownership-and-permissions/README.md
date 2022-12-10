@@ -13,24 +13,48 @@ this will result are the user id's group id's and groups where the current user 
 
 //Next execute the `id` command prefixed with `sudo`. What is the difference between both commands. What is happening here?
 
-this will just show the user id group id and group that have sudo permissions
+this will just show the user id ,group id and group that have sudo permissions
 
-## ❌ New User Davy
+## ✅ New User Davy
 1. //*Create a user account for `davy`.*
+```sh
+[user@linux][~]$ sudo adduser davy
+```
 
 2. //*Now open a terminal and switch to the user account using the command `su davy`.*
+```sh
+[user@linux][~]$ su davy
+```
 
 3. //*Create a file called `i_am_legend` inside of the home dir of `davy` using the `davy` session using the command `sudo touch ~/i_am_legend`. Why is this not working?*
+```sh
+[davy@linux][~]$ sudo touch ~/i_am_legend
+```
+it doen't work because davy does not have sudo permissions
 
 4. //*`exit` the current shell of `davy`.*
+```sh
+[davy@linux][~]$ exit
+```
 
 5. //*Add the user account `davy` to the group `sudo`. Now repeat the process. Is it working now?*
+```sh
+[user@linux][~]$ usermod -aG sudo davy
+```
+yes i was able to create the i_am_legend file
 
 6. //*`exit` the current shell of `davy`.*
+```sh
+[davy@linux][~]$ exit
+```
 
 7. //*Now switch to the superuser using `sudo su`.*
+```sh
+[user@linux][~]$ sudo su
+```
 
 8. //*Now execute the `su davy` command from the superuser session. Why do we not need to provide the password of `davy`?*
+because we were root with sudo permissions we do not need to provide the password od davy
 
 ## ✅ Auth.log
 //*What does the file `/log/var/auth.log` track? Provide an example that shows entries being added to the log after you executed the commands.*
