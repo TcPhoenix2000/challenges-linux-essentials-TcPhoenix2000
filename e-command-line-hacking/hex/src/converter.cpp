@@ -1,3 +1,4 @@
+#include <iostream>
 #include "converter.h"
 #include <string>
 // #include <iostream>
@@ -28,16 +29,22 @@ string Converter::hexConverter(int num){
     }
     return str;
 }
-void Converter::decConverter(int value){
+string Converter::decConverter(string value){
 
+   int len = value.length();
+   int base = 1;
+   int temp = 0;
+   for (int i=len-1; i>=0; i--) {
+      if (value[i]>='0' && value[i]<='9') {
+         temp += (value[i] - 48)*base;
+         base = base * 16;
+      }
+      else if (value[i]>='A' && value[i]<='F') {
+         temp += (value[i] - 55)*base;
+         base = base*16;
+      }
+   }
+   string str = to_string(temp);
+   return str;
 }
 
-// std::string Converter::DexToHecConverter(string string){
-
-// };
-// std::string Converter::HexToDecConverter(string string){
-
-// };
-// std::string Converter::stringParser(std::string string){
-
-// };
