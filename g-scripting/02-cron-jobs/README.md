@@ -25,6 +25,6 @@ use the `crontab -e` command to create a cron job
 ```
 add the following line at the bottom of the crontab configuration file
 ```sh
-* * * * * ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}' >> /tmp/cron-ip
-* * * * * cat /tmp/cron-ip | mosquitto_pub -h mqtt.devbit.be -t linux/ip/Tc_Phoenix_ -m 
+* * * * * /home/user/my-ip
 ```
+this will run the my-ip script

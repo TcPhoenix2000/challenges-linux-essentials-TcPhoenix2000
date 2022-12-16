@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Publish this PC's hostname, IP address to MQTT broker
+#
+# Example message published:
+#   Tc_Phoenix_ 192.168.1.36
+
+BROKER="mqtt.devbit.be"
+
+IP=$(ip address | grep -oP '(?<=inet )10.*(?=\/)')
+HOST=$(hostname)
+
+TOPIC="ip/$HOST"
+MSG="$HOST $IP"
+echo $MSG
+
+echo mosquitto_pub -h $BROKER -r -t $TOPIC -m \"$MSG\"
+eval mosquitto_pub -h $BROKER -r -t $TOPIC -m \"$MSG\"
