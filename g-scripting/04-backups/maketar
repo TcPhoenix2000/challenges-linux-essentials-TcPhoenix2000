@@ -1,0 +1,13 @@
+#!/bin/sh
+#Specify user
+USER="User"
+#Add timestamp
+
+TimeStamp=$(date +"%F")
+
+#Specify how the tar archive will be named
+
+BKPNAME="HomeDir-$TimeStamp"
+
+#TarBall it
+tar -zcvf "Backups/$BKPNAME.tar.gz" "/home/$USER"
