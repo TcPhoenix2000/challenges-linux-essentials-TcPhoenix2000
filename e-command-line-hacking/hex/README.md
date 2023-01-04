@@ -42,3 +42,7 @@ Usage:
   -f, --file     arg File name as input file (this does not change input file but returns changed file output as echo in terminal)
 
 ```
+input:
+```sh
+[user@linux][~]$ hex -f test.txt
+```
