@@ -39,6 +39,6 @@ Usage:
   -v, --version  print version
   -h, --help     print usage
   -d, --decimal  convert hex numbers to there decimal value
-  -f, --file     filename TODO
+  -f, --file     arg File name as input file (this does not change input file but returns changed file output as echo in terminal)
 
 ```
