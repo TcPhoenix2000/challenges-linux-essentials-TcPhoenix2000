@@ -1,7 +1,7 @@
-# The CC to use
+# The compiler to use
 CC=g++
 
-# CC flags
+# Compiler flags
 CFLAGS=-c -Wall -std=c++2a
     # -c: Compile or assemble the source files, but do not link.
     # The linking stage simply is not done.
@@ -18,40 +18,33 @@ CFLAGS=-c -Wall -std=c++2a
 # Libraries
 # LIBS=
 
-# Name of executable output
-TARGET= program
-SRCDIR= src
-#SUPDIR= src/*
-BUILDDIR= bin
-TEMPSDIR= temps
+# Name of app
+APPNAME=hex
+BINARY=${APPNAME}
+SRCDIR=src
+BUILDDIR=bin
+INSTALLDIR=/opt/${APPNAME}
+PATHDIR=/usr/local/bin
 
-OBJS := $(patsubst %.cpp,%.o,$(shell find $(SRCDIR) -name '*.cpp'))
+OBJS := $(patsubst %.cpp,%.o,$(shell find ${SRCDIR} -name '*.cpp'))
 
-#tried replacing OBJS with this to find the *.o files
-#OBJSTEMP := $(shell find $(TEMPSDIR) -name '*.o') 
- 
-# test of to move command !! not working
-#MV := $(shell mv $(SRCDIR)/*.o $(TEMPSDIR) && mv $(SUPDIR)/*.o $(TEMPSDIR))
+all: makebuildir ${BINARY}
 
-# mv here wait for build to finish then moves the *.o files to the temps
-all: makebuildir $(TARGET) MV 
+${BINARY}: ${OBJS}
+	${CC} ${LDFLAGS} -o ${BUILDDIR}/$@ ${OBJS} ${LIBS}
 
-#mv here would move the *.o files before the build is finished
-$(TARGET) : $(OBJS) #MV 
-	$(CC) $(LDFLAGS) -o $(BUILDDIR)/$@ $(OBJS) $(LIBS)
-
-%.o: %.cpp
-	$(CC) $(CFLAGS) $< -o $@
+%.o : %.cpp
+	${CC} ${CFLAGS} $< -o $@
 
 clean:
-	rm -rf $(BUILDDIR)
-	rm -rf $(TEMPSDIR)
-	rm -f $(OBJS)
+	rm -rf ${BUILDDIR}
+	rm -f ${OBJS}
+
+# Really basic install - needs improvement
+install:
+	mkdir -p ${INSTALLDIR}
+	cp ${BUILDDIR}/${BINARY} ${INSTALLDIR}
+	ln -sf ${INSTALLDIR}/${BINARY} ${PATHDIR}/${APPNAME}
 
 makebuildir:
-	mkdir -p $(BUILDDIR)
-	mkdir -p $(TEMPSDIR)
-
-MV:
-	mv $(SRCDIR)/*.o $(TEMPSDIR)
-#	mv $(SUPDIR)/*.o $(TEMPSDIR)
+	mkdir -p ${BUILDDIR}
